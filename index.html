@@ -1,0 +1,36 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script type='text/javascript'>
+
+$(document).ready(function ()
+{
+    LangDetection();
+});
+
+function LangDetection(){
+    var clientLang = navigator.language || navigator.userLanguage;
+        $(document).ready(function () {
+
+            if(clientLang == "tr-TR"){
+                $("#PageLoader").load('tr/index.html');
+            }
+            else{
+                $("#PageLoader").load('en/index.html');
+            }          
+        });
+}
+
+</script>
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="robots" content="all">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="mert,yildirim,cv,mert yildirim, mert yildirim resume, resume, resume cv">
+<meta name="description" content="Merhaba! Ben Mert Yıldırım, Kişisel & Kurumsal bazlı Web Tasarım hizmeti vermekteyim. Hizmetlerim hakkında detaylı bilgi için web sitemi ziyaret edebilirsin!">
+<meta name="author" content="Mert Yıldırım @mrttyyldrm">
+<title>Mert Yıldırım | Web Tasarım</title>
+<link rel="shortcut icon" href="Images/Favicon.webp" type="image/x-icon">
+<h1 style="display: none;">Mert Yıldırım</h1>
+
+<div id='PageLoader' style='width:100%; height: 100%; position: absolute; left:0; top:0;' onresize="javascript:LangDetection();"></div>

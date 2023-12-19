@@ -1,0 +1,74 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://kit.fontawesome.com/486aaf834f.js" crossorigin="anonymous"></script>
+
+<div id="logo">
+    <a href="#"><img src="Images/Favicon.webp" alt="Logo"></a>
+</div>
+
+<nav>
+    <ul>
+
+        <li><a href="#home"><i class="fas fa-home"></i></a></li>
+        <li><a href="#about"><i class="fas fa-user-tie"></i></a></li>
+        <li><a href="#services"><i class="fas fa-briefcase"></i></a></li>
+        <li><a href="#prices"><i class="fas fa-tags"></i></i></a></li>
+        <li><a href="#clients" id="last-a"><i class="fas fa-handshake"></i></a></li>
+
+    </ul>
+
+    <script type="text/javascript">
+        
+        mainNavLinks = document.querySelectorAll("nav ul li a");
+        mainSections = document.querySelectorAll("main section");
+
+        lastId;
+        cur = [];
+
+        window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach(link => {
+            let section = document.querySelector(link.hash);
+
+            if (
+            section.offsetTop <= parseInt(fromTop) + 250 &&
+            section.offsetTop + section.offsetHeight > parseInt(fromTop) + 250
+            ) {
+            link.classList.add("current");
+            } else {
+            link.classList.remove("current");
+            }
+
+            if($(window).scrollTop() + $(window).height() == $(document).height()) {
+                
+                $("nav ul li a").removeClass("current");
+                $("#last-a").addClass("current");
+
+            }
+        });
+        });
+    </script>
+
+</nav>
+
+<footer>
+    <p class="f-400 dark">© 2022 by Mert Yıldırım</p>
+</footer>
+
+<div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+        
+    <script type="text/javascript">
+        window.onscroll = function() {myFunction()};
+
+        function myFunction() {
+        var winScroll = $('body').scrollTop();
+        var height = $('body').prop('scrollHeight') - $('body').height();
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("myBar").style.width = scrolled + "%";
+        }
+    </script>
+</div>
